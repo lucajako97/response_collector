@@ -13,7 +13,7 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+#RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 22 and 443 available to the world outside this container
 EXPOSE 443, 22, 2222
@@ -22,4 +22,4 @@ EXPOSE 443, 22, 2222
 # ENV NAME World
 
 # Run app.py when the container launches
-CMD ["python", "web_app.py"]
+#CMD ["python", "flask_app.py"]

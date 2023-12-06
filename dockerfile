@@ -1,11 +1,12 @@
 # Use an official Python runtime as a parent image
-FROM python:3.10-bookworm
+FROM python:3.12-bookworm
 
 #Install stunnel
 RUN apt-get update && \
     apt-get install -y stunnel && \
     rm -rf /var/lib/apt/lists/*
 
+#RUN apt-get install python3-pip
 # Set the working directory to /app
 WORKDIR /app
 
@@ -13,6 +14,7 @@ WORKDIR /app
 COPY ./flask_app.py /app
 COPY ./requirements.txt /app
 COPY ./stunnel_server.conf /app
+COPY ./psk.txt /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt

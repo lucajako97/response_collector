@@ -10,13 +10,15 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY ./flask_app.py /app
+COPY ./requirements.txt /app
+COPY ./stunnel_server.conf /app
 
 # Install any needed packages specified in requirements.txt
-#RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 22 and 443 available to the world outside this container
-EXPOSE 443, 22, 2222
+# Make port 54321 available to the world outside this container
+EXPOSE 54321
 
 # Define environment variable
 # ENV NAME World

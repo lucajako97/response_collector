@@ -1,6 +1,5 @@
 build:
-	docker build -t request_collector
+	docker build -t response_collector .
 
 run:
-	docker run -it --rm request_collector
-
+	docker run -it -p 54321:443 --rm response_collector

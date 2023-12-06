@@ -42,8 +42,8 @@ def handle_capabilities():
     log_request(request)
 
     response_data = {
-        "entropy" : true,
-        "key" : true,
+        "entropy" : True,
+        "key" : True,
         "algorithm" : "QKD",
         "localSystemID" : "Alice",
         "remoteSystemID" : [
@@ -83,7 +83,7 @@ def handle_key():
     log_request(request)
 
     response_data = {
-        "keyId" : "1726e9AE76234FB"
+        "keyId" : "1726e9AE76234FB",
         "key" : "C90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA"
     }
 
@@ -93,4 +93,4 @@ def handle_key():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=80)

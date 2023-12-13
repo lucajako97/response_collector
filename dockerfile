@@ -7,10 +7,11 @@ FROM python:3.12-bookworm
 #     pip3 install --upgrade pip
 
 #Install stunnel
-RUN apt-get update && \
+RUN apt-get upgrade && \
+    apt-get update && \
     apt-get install -y stunnel && \
-    rm -rf /var/lib/apt/lists/*
-#RUN apt-get install -y nano
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get install -y nano
 
 #RUN apt-get install python3-pip
 # Set the working directory to /app

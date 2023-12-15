@@ -90,6 +90,7 @@ def handle_key():
     status_code = 200
 
     response = make_response(jsonify(response_data), status_code)
+    return response
 
 
 if __name__ == '__main__':
